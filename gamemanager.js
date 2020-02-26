@@ -1,4 +1,6 @@
 let GameManager = {
 
-    
+    name: function() {
+        
+    }
 }
