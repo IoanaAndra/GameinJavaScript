@@ -35,14 +35,43 @@ let GameManager = {
          break;
 
    }
+
+   //changes in HTML document 
 let getInterface = document.querySelector(".interface")
- getInterface.innerHTML = "";
+ getInterface.innerHTML = '<img src="img/avatar-player/' + 
+ classType.toLowerCase() + '.png" class="img-avatar"><div><h3>' + classType
++ '</h3><p>Health: ' + player.health + '</p>';
+
+},
+changes in HTML document when choose arena
+ setPreFight: function() {
+
+   let getHeader = document.querySelector(".header");
+   let getActions = document.querySelector(".action");
+   let getArena = document.querySelector(".arena");
+
+   getHeader.innerHTML = '<p>Task: Find an enemy!</p>';
+   getActions.innerHTML = '<a href = "#" class="btn-prefight" onclick="GameManager.setFight()">Search for enemy</a>';
+
+   getArena.style.visibility = "visible";
 
 },
 
- setPreFight: function() {
+setFight: function()  {
+
+   let getHeader = document.querySelector(".header");
+   let getHeader = document.querySelector(".header");
+   let getHeader = document.querySelector(".header");
+
+   //Create enemy
+
+   let enemy00 = new Enemy("Orc", 100, 0, 40, 20, 50);
+   let enemy01 = new Enemy("Troll", 100, 0, 40, 20, 50);
+
+   //Choosing an enemy / Random number generator
+
+   let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(2));
 
 }
-
     
 }
