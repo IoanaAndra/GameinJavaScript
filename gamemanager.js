@@ -72,6 +72,27 @@ setFight: function()  {
 
    let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(2));
 
+   //Considering each case for enemy valu
+
+   switch(chooseRandomEnemy)   {
+
+      case 0:
+
+      enemy = enemy00;
+
+      break;
+
+      case 1:
+
+      enemy = enemy01;
+   }
+
+   getHeader.innerHTML = "<p>Choose you</p>";
+   getActions.innerHTML = '<a href = "#" class="btn-prefight 
+    onclick="GameManager.setFight()">Atack</a>';
+
+
+
 }
     
 }
