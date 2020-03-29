@@ -42,6 +42,56 @@ let calcOutputDamage = calcBaseDamage + offsetDamage;
 }
  
 
-}
+let numberOfHits = Math.floor(Math.random() * Math.floor(player.agility / 10) /2) + 1;
+
+let attackValues = [calcOutputDamage, numberOfHits];
+
+return attackValues;
 
 }
+//get player/enemy to have health changed
+
+let getPlayerHealth = document.querySelector(".health.player");
+let getPlayerHealth = document.querySelector(".health.enemy");
+
+// initiate attacks
+
+if(getPlayerSpeed >= getEnemySpeed)  {
+
+    let playerAttackValues = playerAttack();
+    let totalDamage = playerAttackValues[0] * playerAttackValues[1];
+
+    enemy.healt = enemy.health - totalDamage;
+    alert("you hit" + playerAttackValues[0] + "damage" + playerAttack[1] + "times.");
+
+    if (enemy.health <= 0)  {
+
+        alert("You win! Refresh browser to play again");
+
+        getPlayerHealth.innerHTML = 'Health: ' + player.health;
+        getEnemyHealth.innerHTML = 'Health 0';
+    } else {
+
+        getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
+
+        //enemy attacks
+
+        let enemyAttackValues = enemyAttack();
+
+    let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
+
+    enemy.healt = enemy.health - totalDamage;
+    alert("you hit" + enemyAttackValues[0] + "damage" + enemyAttack[1] + "times.");
+
+    if (player.health <= 0)  {
+
+        alert("You win! Refresh browser to play again");
+
+        getPlayerHealth.innerHTML = 'Health: ' + player.health;
+        getEnemyHealth.innerHTML = 'Health 0';
+    } else {
+
+        getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
+    }
+}   
+

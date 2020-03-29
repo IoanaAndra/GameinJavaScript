@@ -37,22 +37,24 @@ let GameManager = {
    }
 
    //changes in HTML document 
+
+   //class health player for changes during hits against player
+
 let getInterface = document.querySelector(".interface")
  getInterface.innerHTML = '<img src="img/avatar-player/' + 
  classType.toLowerCase() + '.png" class="img-avatar"><div><h3>' + classType
-+ '</h3><p>Health: ' + player.health + '</p>';
-
++ '</h3><p class="health-player">Health: ' + player.health + '</p><p>Mana: ' + player.mana + '</p><p>Strength: ' + player.strength + '</p><p>Agility: ' + player.agility + '</p><p>Mana: ' + player.mana + '</p></div>';
+"class=health.player"
 },
-changes in HTML document when choose arena
+//changes in HTML document when choose arena
+
  setPreFight: function() {
 
    let getHeader = document.querySelector(".header");
    let getActions = document.querySelector(".action");
    let getArena = document.querySelector(".arena");
-
    getHeader.innerHTML = '<p>Task: Find an enemy!</p>';
    getActions.innerHTML = '<a href = "#" class="btn-prefight" onclick="GameManager.setFight()">Search for enemy</a>';
-
    getArena.style.visibility = "visible";
 
 },
