@@ -93,5 +93,46 @@ if(getPlayerSpeed >= getEnemySpeed)  {
 
         getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
     }
+
+
+
+    else if(getEnemySpeedget>= PlayerSpeed)  {
+
+        let enemyAttackValues = enemyAttack();
+        let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
+    
+        enemy.healt = enemy.health - totalDamage;
+        alert("you hit" + playerAttackValues[0] + "damage" + playerAttack[1] + "times.");
+    
+        if (player.health <= 0)  {
+    
+            alert("You win! Refresh browser to play again");
+    
+            getEnemyHealth.innerHTML = 'Health: ' + player.health;
+            getPlayerHealth.innerHTML = 'Health 0';
+        } else {
+    
+            getPlayerHealth.innerHTML = 'Health: ' + player.health;
+    
+            //player attacks
+    
+            let playerAttackValues = enemyAttack();
+    
+        let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
+    
+        enemy.healt = enemy.health - totalDamage;
+        alert("you hit" + enemyAttackValues[0] + "damage" + enemyAttack[1] + "times.");
+    
+        if (player.health <= 0)  {
+    
+            alert("You win! Refresh browser to play again");
+    
+            getPlayerHealth.innerHTML = 'Health: ' + player.health;
+            getEnemyHealth.innerHTML = 'Health 0';
+        } else {
+    
+            getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
+        }
 }   
 
+}
