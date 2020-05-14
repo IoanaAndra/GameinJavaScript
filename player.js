@@ -68,8 +68,8 @@ if(getPlayerSpeed >= getEnemySpeed)  {
 
         alert("You win! Refresh browser to play again");
 
-        getPlayerHealth.innerHTML = 'Health: ' + player.health;
-        getEnemyHealth.innerHTML = 'Health 0';
+        getPlayerHealth.innerHTML = 'Health: ' + enemy.health;
+        getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
     } else {
 
         getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
@@ -94,19 +94,17 @@ if(getPlayerSpeed >= getEnemySpeed)  {
         getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
     }
 
-
-
     else if(getEnemySpeedget>= PlayerSpeed)  {
 
         let enemyAttackValues = enemyAttack();
         let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
     
         enemy.healt = enemy.health - totalDamage;
-        alert("you hit" + playerAttackValues[0] + "damage" + playerAttack[1] + "times.");
+        alert("you hit" + enemyAttackValues[0] + "damage" + enemyAttackValues[1] + "times.");
     
         if (player.health <= 0)  {
     
-            alert("You win! Refresh browser to play again");
+            alert("You lose! Refresh browser to play again");
     
             getEnemyHealth.innerHTML = 'Health: ' + player.health;
             getPlayerHealth.innerHTML = 'Health 0';
@@ -116,14 +114,14 @@ if(getPlayerSpeed >= getEnemySpeed)  {
     
             //player attacks
     
-            let playerAttackValues = enemyAttack();
+            let playerAttackValues = playerAttack();
     
-        let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
+        let totalDamage = playerAttackValues[0] * playerAttackValues[1];
     
         enemy.healt = enemy.health - totalDamage;
-        alert("you hit" + enemyAttackValues[0] + "damage" + enemyAttack[1] + "times.");
+        alert("you hit" + playerAttackValues[0] + "damage" + playerAttackValues[1] + "times.");
     
-        if (player.health <= 0)  {
+        if (enemy.health <= 0)  {
     
             alert("You win! Refresh browser to play again");
     
